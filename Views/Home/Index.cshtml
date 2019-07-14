@@ -1,0 +1,49 @@
+﻿@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUDelicious</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .wrapper{
+        margin-left: 275px;
+        text-align: center;
+        align-content: center;
+        height: 600px;
+        width: 600px;
+    }
+    .middle_wrapper{
+            text-align: center;
+            align-content: center;
+        }
+</style>
+</head>
+<body>
+    <div class = wrapper>
+    <div class = "middle_wrapper">
+        <div class="jumbotron jumbotron-fluid">
+        <h2>Welcome to CRUDelicious</h2>
+        <br>
+        <br>
+        <h3>Check out some Recent Dishes!</h3>
+        <a href="/New">Add a Dish!</a>
+        </div>
+        <hr>
+        @{
+        foreach(var dish in @ViewBag.all){
+            <p>@dish.DishId. <a href = "/@dish.DishId">@dish.Name</a> by @dish.Chef</p>
+            }
+        }
+        <br>
+        <br>
+    </div>
+    </div>
+</body>
+</html>

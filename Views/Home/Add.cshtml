@@ -1,0 +1,80 @@
+@model Dish
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUDelicious</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    .wrapper{
+        margin-left: 325px;
+        text-align: center;
+        align-content: center;
+        height: 500px;
+        width: 500px;
+    }
+    .middle_wrapper{
+        text-align: center;
+        align-content: center;
+        }
+    a{
+        display:inline-block;
+    }
+</style>
+</head>
+<body>
+    <div class = wrapper>
+    <div class = "middle_wrapper">
+        <a href="/"><button class="btn btn-dark">Home</button></a>
+        <h2>Add a new Dish!</h2>
+        <form action="Add" method="post">
+            <div class="form-group">
+            <label for="Name">Dish:</label>
+            <input type="text" class="form-control" name="Name" placeholder="Enter your Dish name.">
+            <span asp-validation-for="Name"></span>
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="Chef">Chef:</label>
+            <input type="text" class="form-control" name="Chef" placeholder="Enter the name of the Chef.">
+            <span asp-validation-for="Chef"></span>
+            </div>
+            <br>
+            <div class="form-group">
+            <label for="Chef">Calories:</label>
+            <input type="text" class="form-control" name="Calories" placeholder="Enter the Calories of your Dish.">
+            <span asp-validation-for="Calories"></span>
+            <br>
+            <div class="form-group">
+            <label for="Tastiness" id="Tastiness">Tastiness:</label>
+                <select name ="Tastiness">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <span asp-validation-for="Tastiness"></span>
+                </div>
+                <br>
+            <div class="form-group">
+            <label for="Description" >Comments:&nbsp;</label>
+            <textarea name="Description">
+            </textarea>
+            <span asp-validation-for="Description"></span>
+            </div>            
+            <br>
+            <button type="Add Dish" class="btn btn-dark">Add Dish</button>
+            </form>
+
+    </div>
+    </div>
+</body>
+</html>
